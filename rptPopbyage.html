@@ -1,0 +1,90 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Ottawa Population by Age (2011 Census)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>	
+	 <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        // Create and populate the data table.
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Total', 'Male', 'Female'],
+          ['0 to 4 years',   49140,     24925,      24215],
+          ['5 to 9 years',   48765,		24660,		24100],
+          ['10 to 14 years',   50665,   25690,		24975],
+          ['15 to 19 years',   58305,	29675,		28630],
+          ['20 to 24 years',   65960,	33100,		32865],
+          ['25 to 29 years',   61230,	30185,   	31045],
+          ['30 to 34 years',   57745,	27675,		30065],
+          ['35 to 39 years',   60360,	28765,		31600],
+          ['40 to 44 years',   64285,	31215,		33065],
+          ['45 to 49 years',   73190,	35935,		37255],
+          ['50 to 54 years',   69010,	33595,		35415],
+          ['55 to 59 years',   57735,	28030,		29705],
+          ['60 to 64 years',   50410,	24385,		26025],
+          ['65 to 69 years',   35865,	16935,		18925],
+          ['70 to 74 years',   26810,	12360,		14445],
+          ['75 to 79 years',   21275,	9545,		11725],
+          ['80 to 84 years',   16305,	6600,		9710],
+          ['85 years and over',16335,	5185,		11150]
+        ]);
+      
+        // Create and draw the visualization.
+        new google.visualization.LineChart(document.getElementById('visualization')).
+            draw(data, {curveType: "function",
+            			title: 'Population by Age and Gender (2011 Census)',
+                        width: 400, height: 400,
+                        vAxis: {maxValue: 10}}
+                );
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+  <div data-role="page">
+	<div data-role="header" data-theme="d">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6908679240944495";
+/* MobileBanner320by50 */
+google_ad_slot = "7580604750";
+google_ad_width = 320;
+google_ad_height = 50;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<div data-role="navbar">
+			<ul>
+      <li><a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a></li>
+      			<li><a href="Amenities.html" rel="external" data-transition="pop" data-prefetch>Map</a></li>
+				<li><a href="Directions.html" rel="external" data-transition="pop" data-prefetch>Directions</a></li>
+				<li><a href="Housing.html" rel="external" data-transition="slidedown" data-prefetch>Real Estate</a></li>
+				<li><a href="Jobs.html" rel="external" data-transition="slidedown" data-prefetch>Jobs</a></li>
+								
+			</ul>
+		</div><!-- /navbar-->
+	</div><!-- /header -->
+    <div id="visualization" style="width: 400px; height: 400px;"></div>
+    <div id="footer"><center>
+		<img src="img/A4C.jpg" />
+			&copy; Apps4Canadians
+			</center>
+			<br>
+	<center>- <a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a>- <a href="ONG.html" rel="external" data-transition="slideup" data-prefetch>About</a>- <a href="mailto:apps4canadians@live.com">Contact</a> - </center>
+			
+		</div><!-- /footer -->
+	</div><!-- /page -->
+  </body>
+</html>

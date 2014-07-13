@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        xmlns:android   = "http://schemas.android.com/apk/res/android"
+        id          = "com.a4c.ongott"
+        
+        versionCode = "1" version     = "0.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Ottawa Neighbourhood Guide</name>
+    
+    <description>
+Ottawa Neighbourhood Guide helps you plan your next real estate purchase or move, finding employment, childcare options, review census statistics or even weekend fun at the park. It also includes a route planner service to map out your travel plans. This app uses numerous Open Data data sets from the City of Ottawa and the Federal Government of Canada.</description>
+    <icon src="icon.png" width="63" height="63"/>
+    <author href="http://www.apps4canadians.ca" email="apps4canadians@live.com">
+        Troy MacFarlane 
+    </author>
+    <gap:splash src="icon.png" />
+    
+    <preference name="permissions" value="none"/>
+    <preference name="android-minSdkVersion"      value="15" />
+    <preference name="phonegap-version" value="3.3.0" />
+<gap:plugin name="org.apache.cordova.inappbrowser" version="0.3.3" />
+<feature name="InAppBrowser">
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    <param name="ios-package" value="CDVInAppBrowser" />
+</feature>
+<access origin="*" />  
+<gap:splash src="splash.png" />  
+    
+</widget>

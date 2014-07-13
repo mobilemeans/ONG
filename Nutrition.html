@@ -1,0 +1,102 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Nutrition Break Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>	
+	 <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['table']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        		
+		//Private Apartment Average Rents ($) by Location
+var data = google.visualization.arrayToDataTable([		
+['Name', 'Measure', 'Weight (g)',  'Energy (kcal)',  'Energy (kJ)',  'Protein',  'Carbohydrate',  'Total Sugar',  'Total Dietary Fibre',  'Total Fat'],
+['POPCORN Air-popped',250,8,32,135,1,7,0,1.3,0],
+['POPCORN Caramel-coated',250,37,160,670,1,29,20,1.9,5],
+['POPCORN Microwave, low fat and reduced salt',250,8,34,144,1,6,0,1.1,1],
+['POPCORN Oil-popped, regular and microwaved',250,12,58,243,1,7,0,1.2,3],
+['CHIPS Corn-based puffs or twists, cheese (CheesiesTM)',250,37,205,857,3,20,1,0.4,13],
+['Potato chips made from dried potatoes, plain (PringlesTM)',17,28,156,654,2,14,1,1.0,11],
+['Potato chips, baked, plain',1,43,202,843,2,31,2,2.1,8],
+['Potato chips, flavoured',1,43,211,883,3,23,0,1.9,14],
+['Potato chips, plain',1,43,230,964,3,21,0,1.6,15],
+['Tortilla chips, nacho flavoured (DoritosTM)',1,50,249,1042,4,31,2,2.7,13],
+['Tortilla chips, plain',26,47,234,980,3,29,0,3.0,12],
+['Banana chips',10,14,73,304,0,8,5,1.1,5],
+['Beef jerky (22cm long)',1,20,81,340,7,2,2,0.4,5],
+['Beer nuts',10,34,186,779,8,10,5,2.2,14],
+['Bits and bites snack bites (Bits & BitesTM)',125,31,132,554,4,21,3,1.9,4],
+['Fruit leather bar (Fruit to GoTM)',1,14,49,206,0,11,0,0.5,1],
+['Pretzels, hard, plain, salted',10,5,19,80,0,4,0,0.2,0],
+['Pretzels, hard, plain, unsalted',10,50,191,797,5,40,1,1.4,2],
+['Rice cakes, plain',1,9,35,146,1,7,0,0.4,0],
+['Sesame sticks, salted',60,14,75,316,2,6,0,0.4,5],
+['Soybeans, roasted, salted',60,44,205,859,15,15,2,7.7,11],
+['Trail mix, regular',60,38,176,735,5,17,0,2.5,11],
+['Trail mix, tropical',60,36,144,604,2,23,0,2.4,6]
+  ]);	
+		
+
+		var table = new google.visualization.Table(document.getElementById('visualization'));
+        table.draw(data, null);
+		      
+       
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+    
+    <Script>$(document).ready(function() {			
+    			$(window).resize(function() {
+  					$('#visualization').width($(window).width() * 0.9);
+  					$('#visualization').height($(window).height() * 0.9);
+				});			
+			});
+	</Script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+  <div data-role="page">
+	<div data-role="header" data-theme="d">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6908679240944495";
+/* MobileBanner320by50 */
+google_ad_slot = "7580604750";
+google_ad_width = 320;
+google_ad_height = 50;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<div data-role="navbar">
+			<ul>
+      <li><a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a></li>
+      			<li><a href="Amenities.html" rel="external" data-transition="pop" data-prefetch>Map</a></li>
+				<li><a href="Directions.html" rel="external" data-transition="pop" data-prefetch>Directions</a></li>
+				<li><a href="Housing.html" rel="external" data-transition="slidedown" data-prefetch>Real Estate</a></li>
+				<li><a href="Jobs.html" rel="external" data-transition="slidedown" data-prefetch>Jobs</a></li>
+								
+			</ul>
+		</div><!-- /navbar-->
+	</div><!-- /header -->
+    <div id="visualization" style="width: 400px; height: 400px;"></div>
+    <div id="footer"><center>
+		<img src="img/A4C.jpg" />
+			&copy; Apps4Canadians
+			</center>
+			<br>
+	<center>- <a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a>- <a href="ONG.html" rel="external" data-transition="slideup" data-prefetch>About</a>- <a href="mailto:apps4canadians@live.com">Contact</a> - </center>
+			
+		</div><!-- /footer -->
+	</div><!-- /page -->
+  </body>
+</html>

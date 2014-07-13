@@ -1,0 +1,350 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Our Neighbourhood Guide - Real Estate Calculations</title>
+	<!-- CALC STYLE -->
+	<style type="text/css">
+/*number inputs*/
+input[type="number"] {
+width:50px; height:30px; 
+text-align:left; 
+margin:1px; 
+float:left;}
+
+/*select and equals elements*/
+select, .equals {
+margin:1px; 
+float:left;}
+
+/*output element*/
+output {
+display:block; 
+border:1px solid #333333; 
+border-radius:5px; 
+min-width:25px; height:25px; 
+margin:1px; padding:2px;
+text-align:center; 
+background:#000000; 
+color:#ffffff; 
+float:left; }
+</style>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		
+	<link rel="stylesheet" href="style.css" />
+ <!-- http://www.feedroll.com/rssviewer/index.php?src=http%3A%2F%2Fottawa.kijiji.ca%2Ff-SearchAdRss%3FCatId%3D43%26Location%3D1700184&generate=Generate+JavaScript&tk=&chan=y&num=0&desc=0&au=n&html=a&date=y&tz=feed&targ=y&utf=y&pc=n&rss_box_id= -->
+
+</head> 
+<body> 
+
+  <div data-role="page" id="mainPage">
+	<div data-role="header" data-theme="d">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6908679240944495";
+/* MobileBanner320by50 */
+google_ad_slot = "7580604750";
+google_ad_width = 320;
+google_ad_height = 50;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<div data-role="navbar" >
+			<ul>
+      	<li><a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a></li>
+      	<li><a href="Amenities.html" rel="external" data-transition="pop" data-prefetch>Map</a></li>
+				<li><a href="Directions.html" rel="external" data-transition="pop" data-prefetch>Directions</a></li>
+				<li><a href="Housing.html" rel="external" data-transition="slidedown" data-prefetch>Real Estate</a></li>
+				<li><a href="Jobs.html" rel="external" data-transition="slidedown" data-prefetch>Jobs</a></li>
+								
+			</ul>
+		</div><!-- /navbar-->
+	</div><!-- /header -->
+
+	<div id="content" data-role="content">	
+		<div id="banner">
+			<p>Real Estate Calculations</p>
+		</div>		
+		<div id="blurb">
+		<center><img src="img/logo.jpg" /></center>
+		
+			<ul data-role="listview" data-inset="true" data-theme="d">
+			
+				<li><h1>30 Sec Real Estate Analyzer</h1>			
+				<ul>
+					<li><a href="#mainPage" data-direction="reverse">Back</a></li>
+					<li>
+						<h2>30 Sec Real Estate Analyzer</h2>
+						<p>Use this calculation to help narrow down properties that should get a 2nd review.  If the answer is "green" or "yellow" then consider a second review, while a "red" indicates a strong likelihood that you should not proceed.</p>
+						<!-- BEGIN CALCS -->
+            <form id="calcA" oninput="updateOutputA()">
+            <br>
+            <div>Purchase Price: <input name="a" type="number" value="0" /></div>
+            <div>Monthly Rent: <input name="b" type="number" value="0" /></div>    
+            <div class="equals"> ANSWER </div>
+            <output name="z" for="a b">0</output>
+            </form> 	
+            <!--  END CALCS -->
+					<script type="text/javascript">
+                    function updateOutputA() { 
+                    //get form
+                    var form = document.getElementById("calcA");
+                    //get output
+                    var out = form.elements["z"];
+                    //get two numbers
+                    var num1 = parseInt(form.elements["a"].value);
+                    var num2 = parseInt(form.elements["b"].value);		
+		
+                    var iPurchase = (num1/12);
+                    var iRent = (num2*10);
+                    if (iPurchase > iRent){
+                        out.value = "RED" + ":" + Math.round(iPurchase) + " is greater than " + Math.round(iRent);           
+                    }
+                    else if (iPurchase == iRent){
+                        out.value = "YELLOW" + ":" + Math.round(iPurchase) + " is equal to " + Math.round(iRent);           
+                    }
+                    else if(iPurchase < iRent){
+                        out.value = "GREEN" + ":" + Math.round(iPurchase) + " is less than " + Math.round(iRent);             
+                    }
+                    else {
+                        num1=0;
+                        num2=0;
+                    }
+                    
+                    
+  	
+                }
+            </script>
+        <!-- END CALC STYLE AND LOGIC-->
+					</li>
+					
+				</ul>			
+				</li>				
+				<li><h1>Gross Rental Multiplier</h1>
+				<ul>
+					<li><a href="#mainPage" data-direction="reverse">Back</a></li>
+					<li>			
+						<h2>Gross Rental Multiplier</h2>
+						<p>This calculation is a general tool for ascertaining value. If the GRM is way out high or low compared to recent comparable sold properties, it probably indicates a problem with the property or gross over-pricing.</p>						
+            <br><br>
+          	<div>Example:<br>
+          	1.  Market Value / Annual Gross Income = Gross Rent Multiplier (GRM)<br>
+			Property sold for $750,000 / $110,000 Annual Income = GRM of 6.82<br>
+			2.  Suppose you did an analysis of recent comparable properties and saw that their GRM's averaged around 6.75. You then approximate the value of 
+			the property being considered for purchase. You know that its gross rental income is $68,000 annually.<br>
+			GRM X Annual Income = Market Value<br>
+			6.75 X $68,000 = $459,000<br>
+			3.  If it's listed at $695,000, you may not want to consider it for purchase.         
+          	</div>
+            <form id="calcB" oninput="updateOutputB()">
+            <br>
+            <div>Comparable Market Value:<input name="a" type="number" value="0" /></div>      
+            <div>Comparable Annual Gross Income: <input name="b" type="number" value="0" /></div>        
+            <div>Annual Income: <input name="c" type="number" value="0" /></div>
+            <div>Market Value: <input name="d" type="number" value="0" /></div>                      
+            <div class="equals"> ANSWER </div>
+          	<output name="z" for="a b c d">0</output>
+          	
+          </form> 	          
+          
+        
+						<script type="text/javascript">
+                function updateOutputB() { 
+                //get form
+                var form = document.getElementById("calcB");
+                //get output
+                var out = form.elements["z"];
+                //get two numbers
+                var num1 = parseInt(form.elements["a"].value);
+                var num2 = parseInt(form.elements["b"].value);
+                var num3 = parseInt(form.elements["c"].value);
+                var num4 = parseInt(form.elements["d"].value);
+			
+               //Gross Rental Multiplier		 
+                var iGRM = num1/num2;
+                var iResult = (num1/num2)*num3;
+                var iMV = num4;
+                
+                if (iResult > iMV){
+                    out.value = "YES, the purchase price is below the estimated value of comparable properties. " + iResult + ":" + iMV;          
+                }
+                 else if (iResult == iMV){
+                  out.value = "The purchase price is EQUAL to comparable properties.";            
+                }
+                else if (iResult < iMV){
+                   out.value = "NO, the purchase price is higher than the estimated value of comparable properties. ";           
+                }
+                else {
+                    num1=0;
+                    num2=0;
+                    num3=0;
+                }/**/
+                }
+              </script>
+					
+					</li>
+				</ul>
+				</li>	
+				<li><h1>Net Operating Income</h1>
+				<ul>
+					<li><a href="#mainPage" data-direction="reverse">Back</a></li>
+					<li>
+						<h2>Net Operating Income</h2>
+						<p>Start by determining the Gross Operating Income (GOI) of the property, which is Gross Potential Income - Vacancy and Credit Loss = Gross Operating Income.  Then determine the operating expenses of the property. Subtract the operating expenses from the Gross Operating Income to arrive at the Net Operating Income.</p>
+				<br><br>
+          <div>Example:<br>
+          1.  Determine the Gross Operating Income (GOI) of the property:<br>
+			Gross Potential Income - Vacancy and Credit Loss = Gross Operating Income<br>
+		  2.  Calculate the operating expenses of the property. This would include expenses for management, legal and accounting, insurance, janitorial, maintenance, supplies, taxes, utilities, etc.<br>
+			3.  Subtract the operating expenses from the Gross Operating Income to get the Net Operating Income. <br>
+			Using the example of a property with a gross operating income of $52,000 and operating expenses of $37,000, the net operating income would be:<br>
+			$52,000 - $37,000 = $15,000 Net Operating Income
+          
+          </div>		
+            <form id="calcC" oninput="updateOutputC()">
+            <br>
+            <div>Gross Potential Income: <input name="a" type="number" value="0" /></div>
+            <div>Vacancy and Credit Loss: <input name="b" type="number" value="0" /></div>
+            <div>Operating Expenses: <input name="c" type="number" value="0" /></div> 
+            <div class="equals"> ANSWER </div>
+          <output name="z" for="a b c">0</output>
+          
+          </form> 	
+            
+					<script type="text/javascript">
+function updateOutputC() { 
+		//get form
+	var form = document.getElementById("calcC");
+		//get output
+	var out = form.elements["z"];
+		//get two numbers
+	var num1 = parseInt(form.elements["a"].value);
+	var num2 = parseInt(form.elements["b"].value);
+	var num3 = parseInt(form.elements["c"].value);
+	
+			
+		//Net Operating Income
+		 
+      var iResult = ((num1-num2)-(num3*1.0));
+      out.value = iResult;
+		
+}
+
+</script>
+						
+					</li>
+				</ul>
+				</li>			
+				<li><h1>Break-Even Ratio</h1>
+				<ul>
+					<li><a href="#mainPage" data-direction="reverse">Back</a></li>
+					<li>
+						<h2>Break-Even Ratio</h2>
+						<p>Add the Debt Service to Operating Expenses and divide by Operating Income.</p>
+			<br>
+          <br>
+          <div>Example:<br>
+          1.  Determine the debt service for the property.  Assume an annual debt service of $32,000<br>
+		  2.  Determine the annual operating expenses for the property.  Assume that management and direct operating costs annually are $47,000.<br>
+		  3.  Calculate the annual gross operating income of the property.  Assume a gross operating income of $98,000 annually.<br>
+          4.  Add Debt Service to Operating Expenses and divide by Operating Income:<br>
+			$32,000 + $47,000 / $98,000 = .81 or an 81% Break-Even Ratio.
+          </div>			
+            <form id="calcD" oninput="updateOutputD()">
+            <br>
+            <div>Debt Service: <input name="a" type="number" value="0" /></div>      
+            <div>Annual Operating Expenses: <input name="b" type="number" value="0" /></div>       
+            <div>Gross Operating Income: <input name="c" type="number" value="0" /></div>           
+            <div class="equals"> ANSWER </div>
+          <output name="z" for="a b c">0</output>
+          
+          </form> 	
+            
+						<script type="text/javascript">
+function updateOutputD() { 
+		//get form
+	var form = document.getElementById("calcD");
+		//get output
+	var out = form.elements["z"];
+		//get two numbers
+	var num1 = parseInt(form.elements["a"].value);
+	var num2 = parseInt(form.elements["b"].value);
+	var num3 = parseInt(form.elements["c"].value);		
+	
+		//Break-Even Ratio
+	
+      out.value = ((num1+num2)/(num3*1.0)*100) + "%";
+      }
+
+</script>
+						
+					</li>
+				</ul>
+				</li>	
+				
+				<li><h1>Gross Potential Income</h1>
+				<ul>
+					<li><a href="#mainPage" data-direction="reverse">Back</a></li>
+					<li>
+						<h2>Gross Potential Income</h2>
+						<p>Gross potential income is the expected income a property will produce without deductions for expected vacancy or credit loss.</p>
+				<br><br>
+          <div>Example:<br>
+          1.  3 units * $700/month = $2100<br>
+		  2.  $2100 * 12 = $25,200<br>
+          3.  3 units * $800/month = $2400<br>
+          4.  $2400 * 12 = $28,800<br>
+          5.  $25,200 + $28,800 = $54,000 Annual income. This is the GPI.<br>
+          </div>	
+            <form id="calcE" oninput="updateOutputE()">
+            <br>
+            <div># of Units Type 1: <input name="a" type="number" value="0" /></div>
+            <div>Monthly Rent Per Month for Type 1: <input name="b" type="number" value="0" /></div>
+            <div># of Units Type 2: <input name="c" type="number" value="0" /></div>
+            <div>Monthly Rent Per Month for Type 2: <input name="d" type="number" value="0" /></div>                     
+          <div class="equals"> ANSWER </div>
+          <output name="z" for="a b c d">0</output>
+          
+          </form> 	
+            
+						<script type="text/javascript">
+function updateOutputE() { 
+		//get form
+	var form = document.getElementById("calcE");
+		//get output
+	var out = form.elements["z"];
+		//get two numbers
+	var num1 = parseInt(form.elements["a"].value);
+	var num2 = parseInt(form.elements["b"].value);
+	var num3 = parseInt(form.elements["c"].value);
+	var num4 = parseInt(form.elements["d"].value);
+	
+		//Gross Potential Income
+	      out.value = "$" + ((num1*num2)*12+(num3*num4)*12)	  
+}
+
+</script>
+						
+					</li>
+				</ul>
+				</li>				
+			</ul>
+		</div><!-- /blurb -->	
+			
+		<div id="footer"><center>
+		<img src="img/A4C.jpg" />
+			&copy; Apps4Canadians
+			</center>
+			<br>
+	<center>- <a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a>- <a href="ONG.html" rel="external" data-transition="slideup" data-prefetch>About</a>- <a href="mailto:apps4canadians@live.com">Contact</a> - </center>
+			
+		</div><!-- /footer -->
+	</div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>

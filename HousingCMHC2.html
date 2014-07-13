@@ -1,0 +1,92 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title># of Private Apt Units</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>	
+	 <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart']});
+    </script>
+    <script type="text/javascript">
+      function drawVisualization() {
+        		
+		//# of Private Apt Units
+       var data = google.visualization.arrayToDataTable([	
+		['Zone',    'Bachelor Oct-12', 'Bachelor Oct-13','1 BDRM Oct-12', '1 BDRM Oct-13', '2 BDRM Oct-12', '2 BDRM Oct-13','3 BDRM+ Oct-12', '3 BDRM+ Oct-13'],
+		['Downtown', 1516, 1537, 5000, 5002, 2068, 2061, 196, 206],
+		['Sandy Hill/Lowertown', 923, 940, 2940, 2921, 1686, 1705, 378, 396],
+		['Glebe/Old Ottawa South', 183, 198, 1557, 1544, 1168, 1257, 210, 198],
+		['Alta Vista', 181, 180, 3680, 3674, 3356, 3441, 294, 290],
+		['Carlington/Iris', 483, 485, 3255, 3269, 2724, 2729, 194, 193],
+		['Chinatown/Hintonburg/Westboro N', 639, 661, 2558, 2312, 1156, 1138, 135, 137],
+		['New Edinb./Manor Park/Overbrook', 222, 220, 1258, 1267, 1568, 1570, 151, 146],
+		['Westboro S/Hampton Pk/Britannia', 429, 428, 2722, 2718, 2289, 2288, 158, 168],
+		['Hunt Club/South Keys', 121, 49, 973, 1052, 1005, 1019, 66, 66],
+		['Former City of Ottawa', 4697, 4698, 23943, 23759, 17020, 17208, 1782, 1800],
+		['Vanier', 169, 169, 1844, 1813, 1813, 1838, 190, 194],
+		['Gloucester North/Orleans', 116, 116, 830, 829, 1477, 1477, 229, 230],
+		['Eastern Ottawa Surrounding Areas', 2, 2, 61, 62, 253, 252, 4, 4],
+		['Gloucester/Eastern Areas', 118, 118, 891, 891, 1730, 1729, 233, 234],
+		['Nepean', 141, 141, 1701, 1700, 2670, 2676, 336, 335],
+		['Western Ottawa Surrounding Areas', 2, 2, 288, 287, 588, 599, 4, 8],
+		['Nepean/Western Areas', 143, 143, 1989, 1987, 3258, 3275, 340, 343]
+		 ]);
+		 
+			 
+		      
+        // Create and draw the visualization.
+        new google.visualization.PieChart(document.getElementById('visualization')).
+            draw(data, {curveType: "function",
+            			title: '# of Private Apt Units',
+                        width: 400, height: 400,
+                        vAxis: {maxValue: 10}}
+                );
+      }
+      
+
+      google.setOnLoadCallback(drawVisualization);
+    </script>
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+  <div data-role="page">
+	<div data-role="header" data-theme="d">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6908679240944495";
+/* MobileBanner320by50 */
+google_ad_slot = "7580604750";
+google_ad_width = 320;
+google_ad_height = 50;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<div data-role="navbar">
+			<ul>
+      <li><a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a></li>
+      			<li><a href="Amenities.html" rel="external" data-transition="pop" data-prefetch>Map</a></li>
+				<li><a href="Directions.html" rel="external" data-transition="pop" data-prefetch>Directions</a></li>
+				<li><a href="Housing.html" rel="external" data-transition="slidedown" data-prefetch>Real Estate</a></li>
+				<li><a href="Jobs.html" rel="external" data-transition="slidedown" data-prefetch>Jobs</a></li>
+								
+			</ul>
+		</div><!-- /navbar-->
+	</div><!-- /header -->
+    <div id="visualization" style="width: 400px; height: 400px;"></div>
+    <div id="footer"><center>
+		<img src="img/A4C.jpg" />
+			&copy; Apps4Canadians
+			</center>
+			<br>
+	<center>- <a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a>- <a href="ONG.html" rel="external" data-transition="slideup" data-prefetch>About</a>- <a href="mailto:apps4canadians@live.com">Contact</a> - </center>
+			
+		</div><!-- /footer -->
+	</div><!-- /page -->
+  </body>
+</html>

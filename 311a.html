@@ -1,0 +1,95 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Our Neighbourhood Guide - 311 (December 2013)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>	
+	<link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['piechart']});
+    </script>
+    <script type="text/javascript">
+    var visualization;
+
+    function drawVisualization() {
+      // To see the data that this visualization uses, browse to
+      // http://spreadsheets.google.com/ccc?key=pCQbetd-CptGXxxQIG7VFIQ
+      var query = new google.visualization.Query(
+         // 'http://spreadsheets.google.com/tq?key=pCQbetd-CptGXxxQIG7VFIQ&pub=1');
+        'https://docs.google.com/spreadsheet/pub?key=0AmK9rnDrCmgcdEpCTjZKaWtlYXctVHlOYk5janJfX1E&pub=1');
+    
+      // Apply query language.
+      query.setQuery('SELECT G,H,I ORDER BY H');
+    
+      // Send the query with a callback function.
+      query.send(handleQueryResponse);
+    }
+    
+    function handleQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+    
+      var options = {
+          title: 'Ottawa December 2013 - 311 Highlights',
+          width:400, height:400
+        };
+      
+      var data = response.getDataTable();
+      visualization = new google.visualization.PieChart(document.getElementById('visualization'));
+      visualization.draw(data, options);
+    }
+    
+
+    google.setOnLoadCallback(drawVisualization);
+    </script>
+       
+  </head>
+  <body style="font-family: Arial;border: 0 none;">
+ 
+  <div data-role="page">
+	<div data-role="header" data-theme="d">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6908679240944495";
+/* MobileBanner320by50 */
+google_ad_slot = "7580604750";
+google_ad_width = 320;
+google_ad_height = 50;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<div data-role="navbar">
+			<ul>
+      <li><a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a></li>
+      			<li><a href="Amenities.html" rel="external" data-transition="pop" data-prefetch>Map</a></li>
+				<li><a href="Directions.html" rel="external" data-transition="pop" data-prefetch>Directions</a></li>
+				<li><a href="Housing.html" rel="external" data-transition="slidedown" data-prefetch>Real Estate</a></li>
+				<li><a href="Jobs.html" rel="external" data-transition="slidedown" data-prefetch>Jobs</a></li>
+								
+			</ul>
+		</div><!-- /navbar-->
+	</div><!-- /header -->
+	
+    <div id="visualization" style="height: 400px; width: 400px;"></div>
+   
+  <div id="footer"><center>
+		<img src="img/A4C.jpg" />
+			&copy; Apps4Canadians
+			</center>
+			<br>
+	<center>- <a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a>- <a href="ONG.html" rel="external" data-transition="slideup" data-prefetch>About</a>- <a href="mailto:apps4canadians@live.com">Contact</a> - </center>
+			
+		</div><!-- /footer -->
+	</div><!-- /page -->
+</body>
+</html>  
+  

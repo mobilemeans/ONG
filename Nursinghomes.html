@@ -1,0 +1,98 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Our Neighbourhood Guide - Senior Residences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>	
+	<link rel="stylesheet" href="style.css" />	
+	<!-- 
+    <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
+    <script type="text/javascript">
+
+    var map;
+    var geoXml;
+    var toggleState = 1;
+    
+    function initialize() {
+      if (GBrowserIsCompatible()) {
+        geoXml = new GGeoXml("http://mapsengine.google.com/map/kml?mid=zqxn7PXlHNRU.kBRCSCjQx-c0&amp;lid=zqxn7PXlHNRU.k5c3eLxPxrB0");
+        map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(45.421529600000000000, -75.697193099999990000));
+        map.addControl(new GLargeMapControl());
+        map.addControl(new GLargeMapControl());
+        map.addOverlay(geoXml);
+      }
+    }
+    
+    function toggleMyKml() {
+      if (toggleState == 1) {
+        map.removeOverlay(geoXml);
+        toggleState = 0;
+      } else {
+        map.addOverlay(geoXml);
+        toggleState = 1;
+      }
+    }
+
+    </script>
+    -->
+    
+    <script>$(document).ready(function() {			
+    			$(window).resize(function() {
+  					$('#iframemap').width($(window).width() * 0.9);
+  					$('#iframemap').height($(window).height() * 0.9);
+				});			
+			});
+	</script>
+  </head>
+  <body onload="initialize()" onunload="GUnload()" style="font-family: Arial;border: 0 none;">
+  
+<div data-role="page">
+	<div data-role="header" data-theme="d">
+	<script type="text/javascript"><!--
+google_ad_client = "ca-pub-6908679240944495";
+/* MobileBanner320by50 */
+google_ad_slot = "7580604750";
+google_ad_width = 320;
+google_ad_height = 50;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+		<div data-role="navbar">
+			<ul>
+      <li><a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a></li>
+      			<li><a href="Amenities.html" rel="external" data-transition="pop" data-prefetch>Map</a></li>
+				<li><a href="Directions.html" rel="external" data-transition="pop" data-prefetch>Directions</a></li>
+				<li><a href="Housing.html" rel="external" data-transition="slidedown" data-prefetch>Real Estate</a></li>
+				<li><a href="Jobs.html" rel="external" data-transition="slidedown" data-prefetch>Jobs</a></li>
+								
+			</ul>
+		</div><!-- /navbar-->
+	</div><!-- /header -->
+	
+	<div>
+	<iframe id="iframemap" src="https://mapsengine.google.com/map/embed?mid=zqxn7PXlHNRU.kJazgdxXrc70" width="400" height="400"></iframe>
+	
+  </div>
+	
+	
+		
+			
+		<div id="footer"><center>
+		<img src="img/A4C.jpg" />
+			&copy; Apps4Canadians
+			</center>
+			<br>
+	<center>- <a href="index.html" rel="external" data-transition="slideup" data-prefetch>Home</a>- <a href="ONG.html" rel="external" data-transition="slideup" data-prefetch>About</a>- <a href="mailto:apps4canadians@live.com">Contact</a> - </center>
+			
+		</div><!-- /footer -->
+	</div><!-- /page -->
+</body>
+</html>  
